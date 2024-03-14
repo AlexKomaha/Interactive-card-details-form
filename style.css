@@ -45,9 +45,15 @@ body {
   text-transform: uppercase;
  }
 
- .card-front,.card-back {
+ .card-front {
   position: absolute;
   width: fit-content;
+ }
+
+ .card-back {
+  position: absolute;
+  width: fit-content;
+  margin-bottom: -105px;
  }
 
  .card-front {
@@ -98,7 +104,7 @@ body {
 
 .expiry-year-display {
   bottom: 30px;
-  right: 35px;
+  right: 50px;
   font-size: 90%;
 }
 
