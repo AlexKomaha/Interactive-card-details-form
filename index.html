@@ -6,6 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <script src="style.js"></script>
   <title>Interactive card details form</title>
 </head>
 <body>
@@ -48,7 +49,8 @@
         type="text"
         name="card-number"
         placeholder="e.g. 1234 5678 9123 0000"
-        oninput="inputCardNumber()">
+        maxlength="19"
+        oninput="formatCardNumber(event)">
         <p id="card-num-error"></p>
 
         <div class="flex">
@@ -61,6 +63,7 @@
         type="text"
         name="expiry-date"
         placeholder="MM"
+        maxlength="2"
         oninput="inputMM()">
 
         <input
@@ -68,9 +71,11 @@
         type="text"
         name="expiry-date"
         placeholder="YY"
+        maxlength="2"
         oninput="inputYY()">
 
         <p id="expiry-error"></p>
+
 
 
         <label for="cvc" class="cvc">CVC <br>
