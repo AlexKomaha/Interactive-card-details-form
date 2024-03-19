@@ -27,3 +27,45 @@ function updateCardNumberDisplay(value) {
   var cardNumberDisplay = document.querySelector(".card-number-display");
   cardNumberDisplay.textContent = value || "0000 0000 0000 0000";
 }
+
+// Function to update the CVC display on the card
+function updateCvcDisplay() {
+  var cvcInput = document.getElementById("cvc").value;
+  var cvcDisplay = document.querySelector(".cvc-display");
+  cvcDisplay.textContent = cvcInput || "000";
+}
+
+// Function to set up event listeners for CVC input
+function setupCvcEventListener() {
+  var cvcInput = document.getElementById("cvc");
+  cvcInput.addEventListener("input", updateCvcDisplay);
+}
+
+// Calling the function to set up event listeners after the page is loaded
+window.addEventListener("load", function() {
+  setupCvcEventListener();
+});
+
+
+// Function to show the thank you message
+function showThankYouMessage() {
+  var thankYouMessage = document.getElementById("thank-you");
+  thankYouMessage.classList.remove("hidden");
+}
+
+// Function to handle form submission
+function handleSubmit(event) {
+  event.preventDefault();
+  showThankYouMessage();
+}
+
+// Function to set up event listener for form submission
+function setupFormSubmitEventListener() {
+  var submitButton = document.getElementById("submit");
+  submitButton.addEventListener("click", handleSubmit);
+}
+
+// Calling the function to set up event listener for form submission after the page is loaded
+window.addEventListener("load", function() {
+  setupFormSubmitEventListener();
+});
