@@ -28,6 +28,36 @@ function updateCardNumberDisplay(value) {
   cardNumberDisplay.textContent = value || "0000 0000 0000 0000";
 }
 
+// Function to update the expiry month display on the card
+function updateExpiryMonthDisplay(value) {
+  var expiryMonthDisplay = document.querySelector(".expiry-month-display");
+  expiryMonthDisplay.textContent = value.padStart(2, "0") || "00";
+}
+
+// Function to update the expiry year display on the card
+function updateExpiryYearDisplay(value) {
+  var expiryYearDisplay = document.querySelector(".expiry-year-display");
+  expiryYearDisplay.textContent = value.slice(-2) || "00";
+}
+
+// Function to handle input for expiry month
+function inputMM() {
+  var inputMM = document.querySelector('input[name="expiry-month"]').value;
+  var month = parseInt(inputMM);
+  if (month >= 1 && month <= 12) {
+    updateExpiryMonthDisplay(inputMM);
+  } else {
+    console.log("Error");
+  }
+}
+
+// Function to handle input for expiry year
+function inputYY() {
+  var inputYY = document.querySelector('input[name="expiry-year"]').value;
+  updateExpiryYearDisplay(inputYY);
+}
+
+
 // Function to update the CVC display on the card
 function updateCvcDisplay() {
   var cvcInput = document.getElementById("cvc").value;

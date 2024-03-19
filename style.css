@@ -39,6 +39,7 @@ body {
  }
 
  .card-details {
+  margin-top: -60px;
   position: relative;
   flex: 0 1 45px;
   margin-right: 150px;
